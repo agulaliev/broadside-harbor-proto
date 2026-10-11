@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гавань Broadside</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+SC:wght@500;600;700&family=Oswald:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+
+</head>
+<body>
+<canvas id="scene" aria-label="Гавань: корабль у причала, город на берегу"></canvas>
+<div id="fade" aria-hidden="true"></div>
+<div id="grain" aria-hidden="true"></div>
+<div id="ui"></div>
+
+<div id="caption" aria-live="polite"><div class="cap-title"></div><div class="cap-sub"></div></div>
+
+<section id="endcard" hidden>
+  <p class="end-eyebrow">Прототип</p>
+  <h2>Здесь начинается бой</h2>
+  <p class="end-mode"></p>
+  <button type="button" id="back-harbor" class="end-btn">Вернуться в гавань</button>
+</section>
+
+<nav id="proto" aria-label="Варианты прототипа">
+  <span class="proto-label">Прототип меню</span>
+  <button type="button" data-variant="A" aria-pressed="false"><b>A</b> Причал</button>
+  <button type="button" data-variant="B" aria-pressed="false"><b>B</b> Кино</button>
+  <button type="button" data-variant="C" aria-pressed="false"><b>C</b> Бухта</button>
+  <button type="button" id="sound" aria-pressed="false"><span>Включить звук</span></button>
+  <button type="button" id="about-btn" aria-expanded="false">Что это</button>
+</nav>
+<aside id="about" hidden>
+  <h3>Три варианта главного меню</h3>
+  <p><b>A · Причал</b> — как ангар «Мира танков»: корабль у причала крупно, крутится мышью; сверху «В море» и режим, снизу флот, справа цифры, слева компания.</p>
+  <p><b>B · Кино</b> — как меню больших одиночных игр: камера сама снимает гавань, интерфейса минимум, он прячется, пока мышь не двигается.</p>
+  <p><b>C · Бухта</b> — сама гавань и есть меню: наведи на верфь, таверну, причал, маяк или форт — камера полетит туда.</p>
+  <p class="about-note">Корабли, люди, звуки, цвета неба и воды — из игры. Вода и свет здесь браузерные, в игре картинка своя. Город, верфь, маяк и форт — простые формы для расстановки: в игре нужны модели. Клавиши 1, 2, 3 — варианты, F — кадры в секунду.</p>
+</aside>
+
+<div id="loading">
+  <div class="load-inner">
+    <div class="load-title">BROADSIDE</div>
+    <div class="load-bar"><i></i></div>
+    <div class="load-note">Поднимаем якорь…</div>
+  </div>
+</div>
+<div id="fps" hidden></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
